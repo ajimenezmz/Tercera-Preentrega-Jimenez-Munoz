@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <h1>Ordenes</h1>
+{% endblock title %}
+    
+    
+
+{% block contenido %}
+    <div class="text-center text-black">
+        <h1>Ordenes</h1>
+    </div>
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th>Nombre del Cliente</th>
+                <th>Numero de Serie del Producto</th>
+                <th>Direccion</th>
+                <th>Cantidad a comprar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for o in ordenes %}
+            <tr>
+                <td>{{ o.nombreCliente }}</td>
+                <td>{{ o.numSerieProd }}</td>
+                <td>{{ o.direccion }}</td>
+                <td>{{ o.cantidad }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock contenido %}

@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <h1>Bienvenidos a la tienda</h1>
+{% endblock title %}
+        
+
+{% block contenido %}
+    <div class="text-center text-black">
+        <h1>Prendas diseñadas y fabricadas en Coahuila</h1>
+    </div>
+
+    <form action="/buscar" method="get">
+        {% csrf_token %}
+        <p>Buscar en tipo de Prendas: <input type="text" name="buscar" id="buscar"></p>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock contenido %}
+    
+
